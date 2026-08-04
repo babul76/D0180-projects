@@ -1,0 +1,21 @@
+oc login https://api.<cluster-name>:6443
+
+oc new-project yourproject
+
+oc new-app registry.access.redhat.com/ubi9/httpd-24
+
+oc get pods
+
+oc get svc
+
+oc expose svc/httpd
+
+oc get route
+
+curl http://$(oc get route httpd -o jsonpath='{.spec.host}')
+
+oc get all
+
+
+
+##This sequence creates an HTTPD application, exposes it through an OpenShift Route, and makes it accessible from outside the cluster.
