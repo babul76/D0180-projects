@@ -1,0 +1,19 @@
+oc get new-project babul
+oc create deployment demo-app --image=nginx
+oc get po
+oc get no
+oc get po -owide                    #find ip address
+oc debug no/ns-test-worker-1
+chroot / host
+curl 10.127.0.129                    #ip address
+
+
+
+
+
+
+
+
+
+
+how  to login  node and inside the node access it.....
