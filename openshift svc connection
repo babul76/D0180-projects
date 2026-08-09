@@ -11,6 +11,13 @@ oc get po -owide                                         #to check
 
 
 
+outside access.....
+oc get svc 
+oc expose svc/svc-test-app
+oc get route
+curl 
+
+
 to check working or not 
 oc get po
 oc get po -owide
