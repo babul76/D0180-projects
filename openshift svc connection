@@ -17,3 +17,18 @@ oc get po -owide
 oc delete po --all --force
 oc get po -owide
 oc get ep
+
+
+
+
+Project
+  │
+  └── babul-svc
+       │
+       ├── Deployment: demo-app
+       │       │
+       │       └── Pod: httpd
+       │
+       └── Service: svc-demo-app
+                │
+                └── ClusterIP :80
