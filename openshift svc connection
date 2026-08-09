@@ -1,0 +1,19 @@
+oc new-project babul-svc
+oc project
+oc create deploy demo-app --image=httpd
+oc create svc clusterip svc-demo-app --tcp=80:80
+oc get svc
+oc edit deployment/demo-app -oyaml                       #templete under copy app: test-app
+oc get svc
+oc edit svc/svc-demo-app                                 #seletor under edit app: test-app (paste)
+oc get ep
+oc get po -owide                                         #to check
+
+
+
+to check working or not 
+oc get po
+oc get po -owide
+oc delete po --all --force
+oc get po -owide
+oc get ep
