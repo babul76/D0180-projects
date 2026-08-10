@@ -1,0 +1,35 @@
+oc new-project demo-03
+oc new-app --name=test-app httpd
+oc expose svc/test-app
+oc get route
+
+(then copy the host url and hit over the internate)
+
+
+
+
+
+
+Complete flow:
+oc new-project demo-03
+oc new-app --name=test-app httpd
+oc get pods
+oc get svc
+oc expose svc/test-app
+oc get route
+oc describe route/test-app
+curl http://$(oc get route test-app -o jsonpath='{.spec.host}')
+
+
+Behind the process:
+httpd image
+    ↓
+Deployment
+    ↓
+Pod
+    ↓
+Service (test-app)
+    ↓
+Route
+    ↓
+External user/browser
