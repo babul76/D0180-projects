@@ -1,0 +1,7 @@
+oc new-project babuldemo-101
+oc new-app --name test-app -i php~https://github.com/babul76/D0180-s2i.git
+oc get po
+oc get svc
+oc expose svc/test-app
+oc get route                         //copy the host app and put it over the network
+
