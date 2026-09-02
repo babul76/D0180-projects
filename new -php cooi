@@ -1,0 +1,10 @@
+oc new-app --name test-app -i php~https://github.com/babul76/D0180-s2i.git
+oc get po
+oc logs -f buildconfig/test-app
+oc get po
+oc get po -owide
+oc get co
+oc project openshift-image-registry
+oc get po
+oc get po -n openshift-image-registry
+oc get po -n openshift-image-registry -owide
