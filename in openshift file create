@@ -1,0 +1,10 @@
+oc new-project demo-100
+oc new-app httpd
+oc get po
+oc rsh httpd-58557dd68b-8bc8m
+ls 
+pwd
+touch file1
+touch file{02..10}
+exit
+oc rsh httpd-58557dd68b-8bc8m ls
