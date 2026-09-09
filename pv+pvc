@@ -1,0 +1,7 @@
+oc new-project demo-100
+oc new-app httpd
+oc get po
+oc rsh httpd-58557dd68b-8bc8m     
+oc set volume --help
+oc set volume dc/myapp --add --name=v1 -m /data --overwrite   ///edit it
+oc set volume deployment/httpd --add --name=my-data -m /babul-data --overwrite
