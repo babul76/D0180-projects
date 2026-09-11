@@ -1,6 +1,8 @@
 oc new-project demo-100
 oc new-app httpd
 oc get po
+oc get deploy
+oc get po
 oc rsh httpd-58557dd68b-8bc8m
 ls 
 pwd
