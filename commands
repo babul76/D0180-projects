@@ -1,0 +1,498 @@
+oc get po
+    5  oc project sbabul
+    6  oc create deployment test-app --image=httpd  
+    7  oc get po
+    8  oc create deployment test-app --image=httpd  
+    9  oc adm policy add-scc-to-user anyuid -z default
+   10  oc delete po --all --force
+   11  oc get po
+   12  claer
+   13  oc projects
+   14  oc project babulsahoo - my first test project
+   15  oc project babul-sahoo 
+   16  oc get po
+   17  oc project babul test-project
+   18  oc project babulsahoo
+   19   oc prgojects
+   20  oc project
+   21  oc projects
+   22  oc get po
+   23  oc adm policy add-scc-to-user anyuid -z default
+   24  oc rollout restart deploy/nginx-sample 
+   25  oc get pods
+   26  oc log pod snginx-sample-56ff4bdfdd-25kh5
+   27  oc logs pod snginx-sample-56ff4bdfdd-25kh5
+   28  oc logs pod nginx-sample-56ff4bdfdd-25kh5
+   29  oc logs po nginx-sample-56ff4bdfdd-25kh5
+   30  oc describe pod nginx-sample-56ff4bdfdd-25kh5
+   31  oc set image deployment/nginx-sample \
+   32  oc set image deployment/nginx-sample nginx-sample=image-registry.openshift-image-registry.svc:5000/babulsahoo/nginx-sample:latest
+   33  oc get pods
+   34  oc rollout restart deploy/nginx-sample 
+   35  oc get pods
+   36  oc delete po nginx-sample-5668dd6b94-74jtv
+   37  oc delete po nginx-sample-56ff4bdfdd-25kh5
+   38  oc get po
+   39  ls -l
+   40  whoami
+   41  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+   42  oc get po
+   43  oc projects
+   44  oc new-project myproject
+   45  whoami
+   46  oc project
+   47  oc get po
+   48  history
+   49  oc project babulsahoo
+   50  oc describe project babul 
+   51  oc projects
+   52  oc project
+   53  oc get po
+   54  openshift login - oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+   55  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+   56  oc get po
+   57  oc new-project myproject
+   58  oc new-project yourproject
+   59  oc project yourproject
+   60  oc projects
+   61  oc new-app registry.access.redhat.com/ubi9/httpd-24
+   62  oc staus
+   63  oc status
+   64  oc new-app httpd
+   65  oc get po
+   66  oc get pods
+   67  oc describe pod <httpd-5c59db98db-vtlp2>
+   68  oc describe pod <pod-httpd-5c59db98db-vtlp2>
+   69  oc describe pod<pod-httpd-5c59db98db-vtlp2>
+   70  oc oc get 
+   71  oc get pods
+   72  oc get svc
+   73  oc expose svc/httpd
+   74  oc get route
+   75  oc get route httpd -o jsonpath='{.spec.host}'
+   76  curl http://$(oc get route httpd -o jsonpath='{.spec.host}')
+   77  curl http://$(oc get route httpd -o jsonpath='{.spec.host}')
+   78  oc get all
+   79  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+   80  oc project
+   81  oc whoami
+   82  oc projects
+   83  oc new-project babulpractice
+   84  oc project sbabul
+   85  oc project
+   86  oc project babulpractice 
+   87  oc project
+   88  oc get clusterversion
+   89  oc version
+   90  oc get nodes
+   91  oc get help
+   92  oc get --help
+   93  oc api-resources
+   94  oc create --help
+   95  oc options
+   96  oc explain pod
+   97  oc explain deployment 
+   98  oc get deployment
+   99  oc project sbabul 
+  100  oc get deployment
+  101  oc edit deployment test-app 
+  102  history
+  103  oc api-resources
+  104  vi pod.yaml
+  105  oc apply -f pod.yaml 
+  106  oc get pod
+  107  oc describe po/test-app-7f9cbb79cc-hh7kh 
+  108  ls
+  109  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  110  oc get po
+  111  oc projects
+  112  oc new-projcet babultask01
+  113  oc projcet babulsahoo
+  114  oc projects
+  115  oc create-project sahoobabul
+  116  oc new-project sahoobabul
+  117  oc projects
+  118  oc create deployment demo-app --image=nginx
+  119  oc get po
+  120  oc adm policy add-scc-to-user anyuid -z deafult
+  121  oc delete po-all
+  122  oc delete po -all
+  123  oc get po
+  124  oc delete po --all --force
+  125  oc delete po --all--force
+  126  oc get po
+  127  oc delete po -all --force
+  128  oc delete po --all --force
+  129  oc get po
+  130  [j2c_babul@terminal ~]$ oc delete po -all --force
+  131  error: unknown shorthand flag: 'a' in -all
+  132  See 'oc delete --help' for usage.
+  133  [j2c_babul@terminal ~]$ oc delete po --all --force
+  134  Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+  135  pod "demo-app-65bd44c89b-br8sv" force deleted from sahoobabul namespace
+  136  [j2c_babul@terminal ~]$ oc get po
+  137  NAME                        READY   STATUS   RESTARTS      AGE
+  138  demo-app-65bd44c89b-44jsw   0/1     Error    2 (24s ago)   29s
+  139  [j2c_babul@terminal ~]$ oc delete po -all --force
+  140  error: unknown shorthand flag: 'a' in -all
+  141  See 'oc delete --help' for usage.
+  142  [j2c_babul@terminal ~]$ oc delete po --all --force
+  143  Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+  144  pod "demo-app-65bd44c89b-br8sv" force deleted from sahoobabul namespace
+  145  [j2c_babul@terminal ~]$ oc get po
+  146  NAME                        READY   STATUS   RESTARTS      AGE
+  147  demo-app-65bd44c89b-44jsw   0/1     Error    2 (24s ago)   29s
+  148  [j2c_babul@terminal ~]$ oc delete po -all --force
+  149  error: unknown shorthand flag: 'a' in -all
+  150  See 'oc delete --help' for usage.
+  151  [j2c_babul@terminal ~]$ oc delete po --all --force
+  152  Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+  153  pod "demo-app-65bd44c89b-br8sv" force deleted from sahoobabul namespace
+  154  [j2c_babul@terminal ~]$ oc get po
+  155  NAME                        READY   STATUS   RESTARTS      AGE
+  156  demo-app-65bd44c89b-44jsw   0/1     Error    2 (24s ago)   29s
+  157  [j2c_babul@terminal ~]$ oc delete po -all --force
+  158  error: unknown shorthand flag: 'a' in -all
+  159  See 'oc delete --help' for usage.
+  160  [j2c_babul@terminal ~]$ oc delete po --all --force
+  161  Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+  162  pod "demo-app-65bd44c89b-br8sv" force deleted from sahoobabul namespace
+  163  [j2c_babul@terminal ~]$ oc get po
+  164  NAME                        READY   STATUS   RESTARTS      AGE
+  165  demo-app-65bd44c89b-44jsw   0/1     Error    2 (24s ago)   29s
+  166  [j2c_babul@terminal ~]$ oc delete po -all --force
+  167  error: unknown shorthand flag: 'a' in -all
+  168  See 'oc delete --help' for usage.
+  169  [j2c_babul@terminal ~]$ oc delete po --all --force
+  170  Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+  171  pod "demo-app-65bd44c89b-br8sv" force deleted from sahoobabul namespace
+  172  [j2c_babul@terminal ~]$ oc get po
+  173  NAME                        READY   STATUS   RESTARTS      AGE
+  174  demo-app-65bd44c89b-44jsw   0/1     Error    2 (24s ago)   29s
+  175  oc get po
+  176  oc adm policy add-scc-to-user anyuid -z default
+  177  oc delete po --all --force
+  178  oc get po                                                                                       #check pod running or not
+  179  oc get po
+  180  oc get no
+  181  oc debug no/ns-test-worker-1
+  182  oc get po
+  183  oc po describes
+  184  oc describe
+  185  oc describe po
+  186  oc get po
+  187  oc get no
+  188  oc debug no/ns-test-worker-1
+  189  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  190  oc get po
+  191  oc get po -owide
+  192  oc get no
+  193  oc debug no/ns-test-worker-1
+  194  pwd
+  195  ls 
+  196  cat pod.yaml 
+  197  ls
+  198  oc projects
+  199  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  200  oc projects
+  201  oc new-project babul-svc
+  202  oc project
+  203  ll
+  204  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  205  oc project
+  206  oc get po
+  207  oc get no
+  208  oc get po -owide
+  209  oc debug no/ns-test-worker-1
+  210  ll
+  211  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  212  oc project
+  213  oc create deploy demo-app --image=httpd
+  214  oc get po
+  215  oc adm policy add-scc-to-user anyuid -z default
+  216  oc delete po --all--force
+  217  oc delete po --all --force
+  218  oc get po
+  219  oc create svc clusterip svc-demo-app
+  220  oc create svc clusterip svc-demo-app --tcp=80:80
+  221  oc get svc
+  222  oc get ep
+  223  oc edit deployment/test-app -oyaml
+  224  oc edit deployment/demo-app -oyaml
+  225  oc get svc
+  226  oc edit svc/svc-demo-app
+  227  oc get ep
+  228  oc get po
+  229  oc get po -owide
+  230  oc delete po --all --force
+  231  oc get po -owide
+  232  oc get svc
+  233  oc get ep
+  234  oc project
+  235  oc get po
+  236  oc status
+  237  oc get ep
+  238  oc get po -owide
+  239  oc get svc
+  240  oc expose svc/svc-test-app
+  241  oc project
+  242  oc expose svc/svc-demo-app
+  243  oc get route
+  244  curl svc-demo-app-babul-svc.apps.ns-test.cloud-lab.j2ctechnologies.intern
+  245  oc procects
+  246  oc projects
+  247  oc project
+  248  oc new-project task-02
+  249  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  250  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  251  oc project
+  252  ls
+  253  oc projects
+  254  ls
+  255  rm -rf *
+  256  ll
+  257  cd test/
+  258  cd ~
+  259  mkdir oc-cli
+  260  cd oc-cli
+  261  pwd
+  262  cd oc-cli
+  263  cd oc-cli/
+  264  wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/4.20.1/openshift-client-linux-4.20.1.tar.gz
+  265  ll
+  266  tar -xvzf openshift-client-linux-4.20.1.tar.gz
+  267  ll
+  268  .oc version
+  269  ./oc version
+  270  oc project
+  271  ls
+  272  oc status
+  273  ls -l
+  274  ll
+  275  histry
+  276  history
+  277  oc projects
+  278  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  279  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  280  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  281  oc projects
+  282  ll
+  283  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  284  oc get po
+  285  oc describe no/node-monitoring-agent-5zdgj
+  286  oc get po
+  287  oc get no 
+  288  oc describe no/ns-test-master-0 
+  289  ll
+  290  oc projects
+  291  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  292  oc projects
+  293  oc project
+  294  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  295  clear
+  296  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  297  oc projects
+  298  oc new-project babuldemo-101
+  299  oc new-app --name test-app -i php~https://github.com/babul76/D0180-s2i.git
+  300  oc get po
+  301  oc get route
+  302  oc get svc
+  303  oc expose svc/test-app
+  304  oc get route
+  305  crictl ps | grep step
+  306  oc delete all --all 
+  307  ll
+  308  oc get all
+  309  oc new-app --name test-app -i php~https://github.com/babul76/D0180-s2i.git
+  310  oc get po
+  311  oc logs -f buildconfig/test-app
+  312  oc get po
+  313  oc get po -owide
+  314  ssh core@172.16.200.161
+  315  ssh core@172.16.200.161
+  316  oc get po
+  317  crictl ps grep test
+  318  crictl ps grep test-app
+  319  crictl ps grep test-app-1-build
+  320  sudo -i
+  321  oc get no
+  322  oc debug node/ns-test-worker-1
+  323  oc get co
+  324  oc project openshift-image-registry 
+  325  oc get po
+  326  oc get po-n project openshift-image-registry
+  327  oc get po -n project openshift-image-registry
+  328  oc get po -n openshift-image-registry
+  329  oc get po -n openshift-image-registry -owide
+  330  podman ps
+  331  podman  ps
+  332  podman  ps -a
+  333  podman image
+  334  podman images
+  335  ll
+  336  oc 
+  337  ls
+  338  sudo -i
+  339  ll
+  340  ll
+  341  oc new-project demo-100
+  342  ns-test
+  343  oc new-app httpd
+  344  oc get po
+  345  oc rsh httpd-58557dd68b-8bc8m
+  346  oc get po
+  347  oc rsh httpd-58557dd68b-8bc8m ls
+  348  ll
+  349  oc project
+  350  oc projects
+  351  oc get pv
+  352  oc get pv
+  353  oc get pv
+  354  oc get pv
+  355  oc get pvc
+  356  oc get pvc
+  357  oc get pv
+  358  oc get pv
+  359  oc get pvc
+  360  oc set volume --help
+  361  oc set volume dc/myapp --add --name=v1 -m /data --overwrite
+  362  oc set volume deployment/httpd --add --name=my-data -m /babul-data --overwrite
+  363  oc edit deployment
+  364  oc get pvc
+  365  oc edit deployment
+  366  ls
+  367  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  368  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  369  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  370  ls
+  371  sudo -i
+  372  ll
+  373  ls
+  374  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  375  oc get po
+  376  oc get pv
+  377  oc get pvc
+  378  oc get sc
+  379  oc get pods
+  380  oc get pods -o wide
+  381  oc get deployment
+  382  oc get rs
+  383  oc get svc
+  384  oc describe pv <pv-name>
+  385  oc describe pvc <pvc-name>
+  386  oc describe pod <pod-name>
+  387  oc logs <pod-name>
+  388  oc get pv
+  389  oc get pvc
+  390  oc get sc
+  391  oc get pods
+  392  oc get pods -o wide
+  393  oc get deployment
+  394  oc get rs
+  395  oc get svc
+  396  oc describe pv <pv-name>
+  397  oc describe pvc <pvc-name>
+  398  oc describe pod <pod-name>
+  399  oc get pv
+  400  oc get pvc
+  401  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  402  ls
+  403  oc get po
+  404  oc get pv
+  405  oc get pvc
+  406  oc histry
+  407  histry
+  408  oc apply -f static-pv.yaml
+  409  oc project babul-12
+  410  oc new project babul-12
+  411  oc new-project babul-12
+  412  oc get pv
+  413  oc get pv
+  414  oc get pvc
+  415  oc get po
+  416  oc get po
+  417  oc new-app httpd --name=pv-pvc-app
+  418  oc get deployment
+  419  oc get po
+  420  oc set volume deployment/pv-pvc-app --add --name=static-vol --claim-name=babul-static-pvc --mount-path=/tmp
+  421  oc get po
+  422  oc rsh po
+  423  oc rsh pv-pvc-app-75698d944d-tljbx 
+  424  oc get po
+  425  oc rhs pv-pvc-app-75698d944d-tljbx ls
+  426  oc rsh pv-pvc-app-75698d944d-tljbx ls
+  427  ls
+  428  oc rsh pv-pvc-app-75698d944d-tljbx 
+  429  oc get po
+  430  oc get no
+  431  oc get po
+  432  ls
+  433  oc project
+  434  oc project babul-12
+  435  oc rsh httpd-6ddcbc54c6-7fc7l
+  436  oc new-app httpd
+  437  oc get po
+  438  oc get no
+  439  oc get pv
+  440  oc get pvc
+  441  oc get po
+  442  oc rsh httpd-58557dd68b-z9bw5
+  443  oc rsh httpd-6ddcbc54c6-7fc7l
+  444  oc rsh pv-pvc-app-75698d944d-tljbx
+  445  ll
+  446  oc get po
+  447  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  448  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  449  clear
+  450  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  451  oc get po
+  452  oc get pv
+  453  clear
+  454  oc get po
+  455  oc get pvc
+  456  ll
+  457  oc get pvc
+  458  oc apply -f dynamic-pvc.yaml
+  459  touch dynamic-pvc.yaml
+  460  oc apply -f dynamic-pvc.yaml
+  461  oc get po
+  462  oc get pods
+  463  oc rsh httpd-58557dd68b-z9bw5
+  464  oc rsh httpd-58557dd68b-z9bw5
+  465  oc rsh httpd-58557dd68b-z9bw5
+  466  ls -l
+  467  oc rsh httpd-58557dd68b-z9bw5 ls
+  468  oc get po
+  469  oc rsh httpd-58557dd68b-z9bw5 ls
+  470  oc rsh httpd-58557dd68b-z9bw5 ls -l
+  471  oc rsh pv-pvc-app-75698d944d-tljbx ls
+  472  oc delete po pv-pvc-app-75698d944d-tljbx
+  473  oc get po
+  474  oc delete po httpd-58557dd68b-z9bw5
+  475  oc get po
+  476  oc rsh httpd-58557dd68b-bk99w ls
+  477  oc rsh httpd-58557dd68b-bk99w -ls
+  478  oc rsh httpd-58557dd68b-bk99w ll
+  479  oc rsh httpd-58557dd68b-bk99w ls
+  480  oc rsh httpd-58557dd68b-bk99w
+  481  oc rsh httpd-58557dd68b-bk99w ls
+  482  oc rsh httpd-58557dd68b-bk99w ls-lrt
+  483  ls -lrt
+  484  oc rsh httpd-58557dd68b-bk99w ls -lrt
+  485  ll
+  486  showmount -e localhost
+  487  showmount -e localhost
+  488  ls
+  489  ll
+  490  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  491  oc get po
+  492  showmount -e localhost
+  493  cat /etc/exports
+  494  showmount -e 10.10.10.105
+  495  mount -t nfs 10.10.10.105:/root/nfs-storage/my-data /mnt
+  496  mount -t nfs 10.10.10.105:/root/nfs-storage/my-data/mnt
+  497  ll
+  498  ll
+  499  oc projects
+  500  oc login -u j2c_babul https://api.ns-test.cloud-lab.j2ctechnologies.intern:6443
+  501  oc projects
