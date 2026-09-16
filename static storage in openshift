@@ -1,0 +1,81 @@
+1.Go to Web UI
+2.Storage --> Persistant Volume --> Create PV
+3.Fill the required pv details
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: soumya-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /do-180
+    server: 10.10.10.105
+  claimRef:
+    namespace: soumyapractice3
+    name: soumya-pvc
+4.Fill the required pvc details
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: soumya-pv
+  namespace: soumyapractice3
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+	requests:
+		storage: 1Gi
+  volumeName: soumya-pv
+  
+5.#oc get pv |grep soumya
+6.#oc get pvc
+7.#oc new-app httpd --name=testing-pvc-app
+8.#oc get deploy
+9.#oc get po
+10.#oc set volume deployment/testing-pvc-app --add --name=soumya-vol --claim-name=soumya-pv --mount-path=/tmp
+11.#oc get po
+12.#oc rsh podname
+$cd /tmp
+$touch soumyatest1
+$bash
+$df -h    check mount point
+13.#oc delete po pv-pvc-app-6fd676b8f6-4xwdn
+14.#oc get po
+15.#oc rsh poname
+$cd /tmp
+$df -h
+check automatically mount point and testfille will found inside /tmp
+
+
+
+
+                 POD
+          ┌────────────────┐
+          │ /tmp           │
+          │                │
+          │ soumyatest1    │
+          └───────┬────────┘
+                  │
+                  │ mounted PVC
+                  ▼
+          ┌────────────────┐
+          │ soumya-pvc     │
+          └───────┬────────┘
+                  │
+                  ▼
+          ┌────────────────┐
+          │ soumya-pv      │
+          └───────┬────────┘
+                  │
+                  ▼
+       ┌──────────────────────┐
+       │ NFS Server           │
+       │ 10.10.10.105         │
+       │ /do-180              │
+       │                      │
+       │ soumyatest1           │
+       └──────────────────────┘
