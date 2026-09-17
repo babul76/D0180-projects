@@ -1,0 +1,88 @@
+1.Login to Web UI
+2.Storage --> Persistant Volume Claim --> Create PVC under required namespace
+3.Fill the required pvc details
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: babulh-dynamic-pvc
+  namespace: babulh-13
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+4.#oc get pvc
+5. If application has already build ,then avoid it
+[#oc new-app httpd --name=testing-pvc-app
+#oc get deploy
+#oc get po  ]
+6.oc set volume deployment/applicationname --add --name=dynamic-vol --claim-name=pvcname --mount-path=/dynamic-vol
+exmpl=oc set volume deployment/testing-pvc-app --add --name=dynamic-vol --claim-name=babulh-dynamic-pvc  --mount-path=/dynamic-vol
+7.#oc get po
+8.#oc rsh podname
+$cd /dynamic-vol
+$touch babultest1
+$bash
+$df -h    check mount point
+9.#oc delete po podname
+10.#oc get po
+11.#oc rsh poname
+$cd /dynamic-vol
+$df -h
+
+check automatically mount point and testfille will found inside /dynamic-vol
+
+
+
+1. Create PVC
+       │
+       ▼
+┌─────────────────────┐
+│ babulh-dynamic-pvc  │
+│       1Gi           │
+└──────────┬──────────┘
+           │
+           │ Bound
+           ▼
+┌─────────────────────┐
+│ testing-pvc-app     │
+│     Deployment      │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│        Pod          │
+│                     │
+│ /dynamic-vol        │
+└──────────┬──────────┘
+           │
+           ▼
+    touch babultest1
+           │
+           ▼
+     babultest1
+
+
+
+then
+
+        DELETE POD
+             │
+             ▼
+       Old Pod gone
+             │
+             ▼
+    Deployment creates
+       NEW POD
+             │
+             ▼
+    PVC automatically
+       mounted again
+             │
+             ▼
+       /dynamic-vol
+             │
+             ▼
+       babultest1
+       STILL EXISTS
